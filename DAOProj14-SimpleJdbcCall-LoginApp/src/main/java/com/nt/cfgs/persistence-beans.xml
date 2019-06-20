@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean  id="jofb"  class="org.springframework.jndi.JndiObjectFactoryBean">
+     <property name="jndiName"  value="java:/comp/env/DsJndi"/>
+  </bean>
+  
+  <bean id="sJdbcCall" class="org.springframework.jdbc.core.simple.SimpleJdbcCall">
+     <constructor-arg ref="jofb"/>
+  </bean>
+  
+  <bean id="loginDAO" class="com.nt.dao.LoginDAOImpl">
+    <property name="sjc" ref="sJdbcCall"/>
+  </bean>
+</beans>

@@ -1,0 +1,10 @@
+SQL> desc RAIL_TICKET_RESERVATION;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PID                                       NOT NULL NUMBER(5)
+ NAME                                               VARCHAR2(20)
+ AGE                                                NUMBER(4)
+ BOARDINGFROM                                       VARCHAR2(20)
+ DESTINATION                                        VARCHAR2(20)
+ 
+ SQL> create sequence PID_SEQ1 start with 1 increment by 1;
